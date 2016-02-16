@@ -22,21 +22,13 @@ import rx.schedulers.Schedulers;
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     public static final String End_Point = "http://weather.livedoor.com";
-    TextView weatherView;
-    TextView dateView;
-    TextView locationView;
-    Button tokyoButton;
-    Button osakaButton;
-    Button hokkaidouButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dateView=(TextView)findViewById(R.id.dateView);
-        locationView=(TextView)findViewById(R.id.locationView);
-        weatherView=(TextView)findViewById(R.id.weatherView);
 
 
 
@@ -80,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
                     String s=weather.getForecasts().get(0).getTelop();
                     Log.d("Location", weather.getLocation().getCity());
-                    textView.setText(s);
+//                    textView.setText(s);
 
 
 
