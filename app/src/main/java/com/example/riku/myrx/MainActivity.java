@@ -1,4 +1,5 @@
 package com.example.riku.myrx;
+import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import com.google.gson.internal.bind.DateTypeAdapter;
 
 import java.util.Date;
 
+import dmax.dialog.SpotsDialog;
 import retrofit.RestAdapter;
 import retrofit.android.AndroidLog;
 import retrofit.converter.GsonConverter;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     TextView weatherView;
     TextView dateView;
     TextView locationView;
+    private SpotsDialog mSpotsDialog;
 
 
     @Override
@@ -36,11 +39,6 @@ public class MainActivity extends AppCompatActivity {
         dateView=(TextView)findViewById(R.id.dateView);
         locationView=(TextView)findViewById(R.id.locationView);
         weatherView=(TextView)findViewById(R.id.weatherView);
-
-
-
-
-
     }
     public void tokyo(View v){
         setAPI("130010");
@@ -77,14 +75,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCompleted() {
                 Log.d(TAG, "onCompleted()");
+                closeWaitingDialog();
                 //必要な情報を取り出して画面に表示したい!!!
-
-
-
             }
-
             @Override
             public void onError(Throwable e) {
+                closeWaitingDialog();
                 Log.e(TAG, "Error : " + e.toString());
             }
 
@@ -100,39 +96,30 @@ public class MainActivity extends AppCompatActivity {
                 locationView.setText(location);
                 dateView.setText(date);
                 weatherView.setText(weatherString);
-
-
-
             }
         };
 
+        showWaitingDialog();
         api2.getWeather(api)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(observer);
-
-
-
-
+    }
+    private void showWaitingDialog(){
+        closeWaitingDialog();
+        mSpotsDialog=new SpotsDialog(this);
+        mSpotsDialog.show();
 
 
     }
+    private void closeWaitingDialog(){
+        if (mSpotsDialog!= null && mSpotsDialog.isShowing()) {
+            mSpotsDialog.dismiss();
+            mSpotsDialog = null;
+        }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 }
 
 
