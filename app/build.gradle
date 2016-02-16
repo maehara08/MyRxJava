@@ -31,4 +31,6 @@ dependencies {
     // Rx
     compile 'io.reactivex:rxjava:1.0.14'
     compile 'com.cookpad.android.rxt4a:rxt4a:0.10.0'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

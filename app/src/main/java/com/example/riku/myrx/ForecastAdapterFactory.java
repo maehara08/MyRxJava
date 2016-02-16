@@ -59,7 +59,7 @@ public class ForecastAdapterFactory implements TypeAdapterFactory {
     }
 
 
-    private void parseJson(String json) {
+    public void parseJson(String json) {
         try {
             JSONObject jsonObject = new JSONObject(json);
             // {forecasts[] -> 0 -> {dataLabel, telop, tem}}

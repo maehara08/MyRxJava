@@ -1,105 +1,167 @@
+
 package com.example.riku.myrx;
 
-/**
- * Created by riku_maehara on 16/02/15.
- */
-import android.media.Image;
-
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-//import javax.annotation.Generated;
+import javax.annotation.Generated;
 
-//@Generated("org.jsonschema2pojo")
+@Generated("org.jsonschema2pojo")
 public class Forecast {
 
-    private String dateLabel;
-    private String telop;
-    private String date;
-    private Image image;
+    private List<PinpointLocation> pinpointLocations = new ArrayList<PinpointLocation>();
+    private String link;
+    private List<Forecast_> forecasts = new ArrayList<Forecast_>();
+    private Location location;
+    private String publicTime;
+    private Copyright copyright;
+    private String title;
+    private Description description;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
-     *
+     * 
      * @return
-     * The dateLabel
+     *     The pinpointLocations
      */
-    public String getDateLabel() {
-        return dateLabel;
+    public List<PinpointLocation> getPinpointLocations() {
+        return pinpointLocations;
     }
 
     /**
-     *
-     * @param dateLabel
-     * The dateLabel
+     * 
+     * @param pinpointLocations
+     *     The pinpointLocations
      */
-    public void setDateLabel(String dateLabel) {
-        this.dateLabel = dateLabel;
+    public void setPinpointLocations(List<PinpointLocation> pinpointLocations) {
+        this.pinpointLocations = pinpointLocations;
     }
 
     /**
-     *
+     * 
      * @return
-     * The telop
+     *     The link
      */
-    public String getTelop() {
-        return telop;
+    public String getLink() {
+        return link;
     }
 
     /**
-     *
-     * @param telop
-     * The telop
+     * 
+     * @param link
+     *     The link
      */
-    public void setTelop(String telop) {
-        this.telop = telop;
+    public void setLink(String link) {
+        this.link = link;
     }
 
     /**
-     *
+     * 
      * @return
-     * The date
+     *     The forecasts
      */
-    public String getDate() {
-        return date;
+    public List<Forecast_> getForecasts() {
+        return forecasts;
     }
 
     /**
-     *
-     * @param date
-     * The date
+     * 
+     * @param forecasts
+     *     The forecasts
      */
-    public void setDate(String date) {
-        this.date = date;
+    public void setForecasts(List<Forecast_> forecasts) {
+        this.forecasts = forecasts;
     }
 
     /**
-     *
+     * 
      * @return
-     * The temperature
+     *     The location
      */
-
-    /**
-     *
-     * @param temperature
-     * The temperature
-     */
-
-    /**
-     *
-     * @return
-     * The image
-     */
-    public Image getImage() {
-        return image;
+    public Location getLocation() {
+        return location;
     }
 
     /**
-     *
-     * @param image
-     * The image
+     * 
+     * @param location
+     *     The location
      */
-    public void setImage(Image image) {
-        this.image = image;
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    /**
+     * 
+     * @return
+     *     The publicTime
+     */
+    public String getPublicTime() {
+        return publicTime;
+    }
+
+    /**
+     * 
+     * @param publicTime
+     *     The publicTime
+     */
+    public void setPublicTime(String publicTime) {
+        this.publicTime = publicTime;
+    }
+
+    /**
+     * 
+     * @return
+     *     The copyright
+     */
+    public Copyright getCopyright() {
+        return copyright;
+    }
+
+    /**
+     * 
+     * @param copyright
+     *     The copyright
+     */
+    public void setCopyright(Copyright copyright) {
+        this.copyright = copyright;
+    }
+
+    /**
+     * 
+     * @return
+     *     The title
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * 
+     * @param title
+     *     The title
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    /**
+     * 
+     * @return
+     *     The description
+     */
+    public Description getDescription() {
+        return description;
+    }
+
+    /**
+     * 
+     * @param description
+     *     The description
+     */
+    public void setDescription(Description description) {
+        this.description = description;
     }
 
     public Map<String, Object> getAdditionalProperties() {
