@@ -67,4 +67,35 @@
         android:layout_alignTop="@+id/textView4"
         android:layout_alignLeft="@+id/locationView"
         android:layout_alignStart="@+id/locationView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tokyo"
+        android:id="@+id/button"
+        android:layout_marginTop="99dp"
+        android:onClick="tokyo"
+        android:layout_below="@+id/weatherView"
+        android:layout_alignLeft="@+id/weatherView"
+        android:layout_alignStart="@+id/weatherView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Osaka"
+        android:id="@+id/button2"
+        android:onClick="osaka"
+        android:layout_alignTop="@+id/button"
+        android:layout_toLeftOf="@+id/weatherView"
+        android:layout_toStartOf="@+id/weatherView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hokkaido"
+        android:id="@+id/button3"
+        android:onClick="hokkaido"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
